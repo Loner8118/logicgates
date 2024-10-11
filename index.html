@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic Gates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #4CAF50;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .gate-options {
+            display: flex;
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .option-box {
+            background-color: #fff;
+            border: 2px solid #4CAF50;
+            padding: 30px;
+            width: 150px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .option-box:hover {
+            background-color: #4CAF50;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Logic Gates</h1>
+    </header>
+
+    <div class="gate-options">
+        <div class="option-box" onclick="window.location.href='and_gate.html'">
+            <h2>AND Gate</h2>
+        </div>
+        <div class="option-box" onclick="window.location.href='nand_gate.html'">
+            <h2>NAND Gate</h2>
+        </div>
+        <div class="option-box" onclick="window.location.href='xor_gate.html'">
+            <h2>XOR Gate</h2>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Logic Gates Project</p>
+    </footer>
+</body>
+</html>

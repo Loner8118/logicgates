@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic Gates - AND Gate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        .diagram-container {
+            margin-bottom: 20px;
+        }
+        .inputs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .input-checkbox {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        .input-label {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+        .note {
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+        .output-section {
+            margin-top: 20px;
+        }
+        .output {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .heading {
+            margin-bottom: 10px;
+        }
+        .subheading {
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .diagram-image {
+            max-width: 100%;
+            height: auto;
+        }
+        .explanation-note {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+            text-align: left;
+            display: inline-block;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>Logic Gates</h1>
+        </div>
+        <!-- Note about default values -->
+        <div class="note">
+            By default, the inputs are zero. Click the buttons below to make them one.
+        </div>
+        <div class="subheading">
+            <h2> AND Gate</h2>
+        </div>
+        <!-- Diagram of the AND gate -->
+        <div class="diagram-container">
+            <img src="and gate.jpg" alt="AND Gate Diagram" class="diagram-image">
+        </div>
+        <div class="inputs">
+            <div>
+                <input type="checkbox" id="inputAND_A" class="input-checkbox" onchange="updateResult()">
+                <label for="inputAND_A" class="input-label">A</label>
+            </div>
+            <div>
+                <input type="checkbox" id="inputAND_B" class="input-checkbox" onchange="updateResult()">
+                <label for="inputAND_B" class="input-label">B</label>
+            </div>
+        </div>
+        <div class="output-section">
+            <h2>Output:</h2>
+            <div id="outputAND" class="output">A: False, B: False, A AND B: False</div>
+        </div>
+        <!-- Explanation of AND gate -->
+        <div class="explanation-note">
+            <p><strong>How the AND Gate Works:</strong></p>
+            <p>The AND gate is a digital logic gate that outputs true (1) only if both of its inputs are true (1). If either of the inputs is false (0), the output will also be false (0). For example:</p>
+            <ul>
+                <li>If A = 0 and B = 0, then A AND B = 0</li>
+                <li>If A = 0 and B = 1, then A AND B = 0</li>
+                <li>If A = 1 and B = 0, then A AND B = 0</li>
+                <li>If A = 1 and B = 1, then A AND B = 1</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function updateResult() {
+            const inputA = document.getElementById('inputAND_A').checked;
+            const inputB = document.getElementById('inputAND_B').checked;
+            
+            // AND gate logic
+            const result = inputA && inputB;
+            
+            // Display the result
+            document.getElementById('outputAND').innerText = `A: ${inputA}, B: ${inputB}, A AND B: ${result}`;
+        }
+    </script>
+</body>
+</html>
